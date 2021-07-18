@@ -1,5 +1,4 @@
 import React from 'react';
-import usePrevious from '../hooks/usePrevious.js';
 import './App.css';
 import Message from '../Message/message.js';
 
@@ -43,32 +42,30 @@ function App() {
 
 
   return (
-    <>
-      <div className="App">
-        <header className="App-header">
-          <p>
-            My first ReactApp
-          </p>
-        </header>
-        <section className='chat__field'>
-          <div className='messages__field'>
-            {messageList.map((message) => (
-              < Message key={message.id} text={message.text} author={message.author} />
-            ))}
-          </div>
-          <form className='messages__form' onSubmit={MessageFormSubmit}>
-            <input
-              className='messages__form_input'
-              value={messageFormValue}
-              onChange={messageFormChange}
-              placeholder="Введите сообщение"
-              required
-            ></input>
-            <button className='messages__form_button'>Отправить</button>
-          </form>
-        </section>
-      </div>
-    </>
+    <div className="App">
+      <header className="App-header">
+        <p>
+          My first ReactApp
+        </p>
+      </header>
+      <section className='chat__field'>
+        <div className='messages__field'>
+          {messageList.map((message) => (
+            < Message key={message.id} text={message.text} author={message.author} />
+          ))}
+        </div>
+        <form className='messages__form' onSubmit={MessageFormSubmit}>
+          <input
+            className='messages__form_input'
+            value={messageFormValue}
+            onChange={messageFormChange}
+            placeholder="Введите сообщение"
+            required
+          ></input>
+          <button className='messages__form_button'>Отправить</button>
+        </form>
+      </section>
+    </div>
   );
 }
 
