@@ -27,7 +27,7 @@ function App() {
     setMessageFormValue(event.target.value)
   };
 
-  const MessageFormSubmit = (event) => {
+  const messageFormSubmit = (event) => {
     event.preventDefault();
     setMessageList((previousMessageList) => {
       let arr = [...previousMessageList, { author: authors.User, text: messageFormValue }];
@@ -54,7 +54,7 @@ function App() {
             < Message key={message.id} text={message.text} author={message.author} />
           ))}
         </div>
-        <form className='messages__form' onSubmit={MessageFormSubmit}>
+        <form className='messages__form' onSubmit={messageFormSubmit}>
           <input
             className='messages__form_input'
             value={messageFormValue}
